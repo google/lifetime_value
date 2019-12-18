@@ -21,6 +21,12 @@ The proposed loss function (implemented in Keras) and evaluation metrics are
 integrated into a python package. And we demonstrate the predictive performance
 of our proposed model in notebooks on two real-world public datasets.
 
+## Paper
+
+Wang, Xiaojing, Liu, Tianqi, and Miao, Jingang. (2019).
+A Deep Probabilistic Model for Customer Lifetime Value Prediction.
+[*arXiv:1912.07753*](https://arxiv.org/abs/1912.07753).
+
 ## Installation
 
 The easiest way is propably using pip:
@@ -100,5 +106,3 @@ makes comparisons on different methods.
 ## People
 Package is created and maintained by Xiaojing Wang, Tianqi Liu, and Jingang
 Miao.
-
-
