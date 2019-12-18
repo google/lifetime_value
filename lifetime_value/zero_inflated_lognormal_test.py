@@ -21,7 +21,7 @@ from __future__ import print_function
 from lifetime_value import zero_inflated_lognormal
 import numpy as np
 from scipy import stats
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 # Absolute error tolerance in asserting array near.
