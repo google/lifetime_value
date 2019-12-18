@@ -42,11 +42,11 @@ class ZeroInflatedLognormalLossTest(tf.test.TestCase):
     self.labels = np.array([[0.], [1.5]])
 
   def zero_inflated_lognormal(self, labels, logits):
-    positive_logits = logits[Ellipsis, :1]
+    positive_logits = logits[..., :1]
     loss_zero = _softplus(positive_logits)
-    loc = logits[Ellipsis, 1:2]
+    loc = logits[..., 1:2]
     scale = np.maximum(
-        _softplus(logits[Ellipsis, 2:]),
+        _softplus(logits[..., 2:]),
         np.sqrt(tf.keras.backend.epsilon()))
     log_prob_non_zero = stats.lognorm.logpdf(
         x=labels, s=scale, loc=0, scale=np.exp(loc))

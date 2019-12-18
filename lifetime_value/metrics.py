@@ -16,7 +16,7 @@
 
 from __future__ import absolute_import
 from __future__ import division
-# from __future__ import google_type_annotations
+
 from __future__ import print_function
 
 import numpy as np
@@ -26,9 +26,9 @@ from typing import Sequence
 
 
 def cumulative_true(
-    y_true,
-    y_pred
-):
+    y_true: Sequence[float],
+    y_pred: Sequence[float]
+) -> np.ndarray:
   """Calculates cumulative sum of lifetime values over predicted rank.
 
   Arguments:
@@ -47,7 +47,7 @@ def cumulative_true(
   return (df['y_true'].cumsum() / df['y_true'].sum()).values
 
 
-def gini_from_gain(df):
+def gini_from_gain(df: pd.DataFrame) -> pd.DataFrame:
   """Calculates gini coefficient over gain charts.
 
   Arguments:
@@ -83,8 +83,8 @@ def _aggregate_fn(df):
 
 
 def decile_stats(
-    y_true,
-    y_pred):
+    y_true: Sequence[float],
+    y_pred: Sequence[float]) -> pd.DataFrame:
   """Calculates decile level means and errors.
 
   The function first partites the examples into ten equal sized

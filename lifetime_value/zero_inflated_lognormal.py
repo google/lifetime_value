@@ -16,7 +16,7 @@
 
 from __future__ import absolute_import
 from __future__ import division
-# from __future__ import google_type_annotations
+
 from __future__ import print_function
 
 import tensorflow.compat.v1 as tf
@@ -24,7 +24,7 @@ import tensorflow_probability as tfp
 tfd = tfp.distributions
 
 
-def zero_inflated_lognormal_pred(logits):
+def zero_inflated_lognormal_pred(logits: tf.Tensor) -> tf.Tensor:
   """Calculates predicted mean of zero inflated lognormal logits.
 
   Arguments:
@@ -34,17 +34,17 @@ def zero_inflated_lognormal_pred(logits):
     preds: [batch_size, 1] tensor of predicted mean.
   """
   logits = tf.convert_to_tensor(logits, dtype=tf.float32)
-  positive_probs = tf.keras.backend.sigmoid(logits[Ellipsis, :1])
-  loc = logits[Ellipsis, 1:2]
-  scale = tf.keras.backend.softplus(logits[Ellipsis, 2:])
+  positive_probs = tf.keras.backend.sigmoid(logits[..., :1])
+  loc = logits[..., 1:2]
+  scale = tf.keras.backend.softplus(logits[..., 2:])
   preds = (
       positive_probs *
       tf.keras.backend.exp(loc + 0.5 * tf.keras.backend.square(scale)))
   return preds
 
 
-def zero_inflated_lognormal_loss(labels,
-                                 logits):
+def zero_inflated_lognormal_loss(labels: tf.Tensor,
+                                 logits: tf.Tensor) -> tf.Tensor:
   """Computes the zero inflated lognormal loss.
 
   Usage with tf.keras API:
@@ -68,13 +68,13 @@ def zero_inflated_lognormal_loss(labels,
   logits.shape.assert_is_compatible_with(
       tf.TensorShape(labels.shape[:-1].as_list() + [3]))
 
-  positive_logits = logits[Ellipsis, :1]
+  positive_logits = logits[..., :1]
   classification_loss = tf.keras.losses.binary_crossentropy(
       y_true=positive, y_pred=positive_logits, from_logits=True)
 
-  loc = logits[Ellipsis, 1:2]
+  loc = logits[..., 1:2]
   scale = tf.math.maximum(
-      tf.keras.backend.softplus(logits[Ellipsis, 2:]),
+      tf.keras.backend.softplus(logits[..., 2:]),
       tf.math.sqrt(tf.keras.backend.epsilon()))
   safe_labels = positive * labels + (
       1 - positive) * tf.keras.backend.ones_like(labels)
