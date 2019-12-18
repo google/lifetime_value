@@ -74,14 +74,14 @@ predict customer's lifetime value and returning probability.
 
 The raw data is available [here](https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data).
 
-*   [Data preparation](./kaggle_acquire_valued_shoppers_challenge/preprocess_data.ipynb)
+*   [Data preparation](./notebooks/kaggle_acquire_valued_shoppers_challenge/preprocess_data.ipynb)
 downloads kaggle data transaction.csv and preprocesses the top 20 most common
 companies' data to customer-level one. This is optional, and running this will
 save time for regression and classification because the data are cached.
-*   [Regression](./kaggle_acquire_valued_shoppers_challenge/regression.ipynb)
+*   [Regression](./notebooks/kaggle_acquire_valued_shoppers_challenge/regression.ipynb)
 trains a Keras regression linear/dnn model with specified loss function and
 evaluates the results.
-*   [Classification](./kaggle_acquire_valued_shoppers_challenge/classification.ipynb)
+*   [Classification](./notebooks/kaggle_acquire_valued_shoppers_challenge/classification.ipynb)
 trains a Keras classification linear/dnn model with specified loss function and
 evaluates the results.
 
@@ -100,7 +100,7 @@ which is to predict the donation dollar value to the 1997 mailing campaign.
 The raw data is available [here](https://kdd.ics.uci.edu/databases/kddcup98/kddcup98.html).
 
 
-*   [Regression](./kdd_cup_98/regression.ipynb) trains regression models and
+*   [Regression](./notebooks/kdd_cup_98/regression.ipynb) trains regression models and
 makes comparisons on different methods.
 
 ## People
