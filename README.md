@@ -32,20 +32,20 @@ A Deep Probabilistic Model for Customer Lifetime Value Prediction.
 The easiest way is propably using pip:
 
 ```
-pip install -q git+https://github.com/google/lifetime-value
+pip install -q git+https://github.com/google/lifetime_value
 ```
 
 If you are using a machine without admin rights, you can do:
 
 ```
-pip install -q git+https://github.com/google/lifetime-value --user
+pip install -q git+https://github.com/google/lifetime_value --user
 ```
 
 If you are using [Google Colab](https://colab.research.google.com/), just add
 "!" to the beginning:
 
 ```
-!pip install -q git+https://github.com/google/lifetime-value
+!pip install -q git+https://github.com/google/lifetime_value
 ```
 
 Package works for python 2 and python 3, although we may stop supporting python

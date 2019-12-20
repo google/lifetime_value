@@ -23,7 +23,7 @@ setup(
     description='Package for lifetime value',
     author='Google LLC',
     author_email='no-reply@google.com',
-    url='https://github.com/google/lifetime-value',
+    url='https://github.com/google/lifetime_value',
     license='Apache 2.0',
     packages=find_packages(),
     install_requires=[
