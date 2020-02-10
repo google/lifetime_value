@@ -24,7 +24,7 @@ import pandas as pd
 import unittest
 
 
-class MetricsTest(googletest.TestCase):
+class MetricsTest(unittest.TestCase):
 
   def setUp(self):
     super(MetricsTest, self).setUp()
@@ -66,4 +66,4 @@ class MetricsTest(googletest.TestCase):
 
 
 if __name__ == '__main__':
-  googletest.main()
+  unittest.main()

@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
-package(default_visibility = ["//visibility:public"])
-
 licenses(["notice"])
 
 exports_files(["LICENSE"])
@@ -68,6 +66,7 @@ py_test(
     srcs_version = "PY2AND3",
     deps = [
         ":zero_inflated_lognormal",
+        "//learning/brain/public:disable_tf2",  # build_cleaner: keep; go/disable_tf2
         # numpy dep,
         # scipy dep,
         # tensorflow dep,
