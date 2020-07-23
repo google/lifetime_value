@@ -48,8 +48,7 @@ If you are using [Google Colab](https://colab.research.google.com/), just add
 !pip install -q git+https://github.com/google/lifetime_value
 ```
 
-Package works for python 2 and python 3, although we may stop supporting python
-2 in the future.
+Package works for python 3 only.
 
 ## Usage
 Package can be imported as

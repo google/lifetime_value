@@ -21,7 +21,7 @@ pytype_library(
     srcs = [
         "metrics.py",
     ],
-    srcs_version = "PY2AND3",
+    srcs_version = "PY3",
     deps = [
         # numpy dep,
         # pandas dep,
@@ -36,7 +36,7 @@ py_test(
     srcs = [
         "metrics_test.py",
     ],
-    srcs_version = "PY2AND3",
+    python_version = "PY3",
     deps = [
         ":metrics",
         "//testing/pybase",
@@ -50,7 +50,7 @@ pytype_library(
     srcs = [
         "zero_inflated_lognormal.py",
     ],
-    srcs_version = "PY2AND3",
+    srcs_version = "PY3",
     deps = [
         # tensorflow dep,
         # tensorflow_probability dep,
@@ -63,7 +63,7 @@ py_test(
     srcs = [
         "zero_inflated_lognormal_test.py",
     ],
-    srcs_version = "PY2AND3",
+    python_version = "PY3",
     deps = [
         ":zero_inflated_lognormal",
         "//learning/brain/public:disable_tf2",  # build_cleaner: keep; go/disable_tf2

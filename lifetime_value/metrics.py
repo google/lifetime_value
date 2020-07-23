@@ -12,17 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
+# Lint as: python3
 """Lifetime value metrics."""
-
-from __future__ import absolute_import
-from __future__ import division
-
-from __future__ import print_function
+from typing import Sequence
 
 import numpy as np
 import pandas as pd
 from sklearn import metrics
-from typing import Sequence
 
 
 def cumulative_true(

@@ -12,13 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
+# Lint as: python3
 """Zero-inflated lognormal loss for lifetime value prediction."""
-
-from __future__ import absolute_import
-from __future__ import division
-
-from __future__ import print_function
-
 import tensorflow.compat.v1 as tf
 import tensorflow_probability as tfp
 tfd = tfp.distributions

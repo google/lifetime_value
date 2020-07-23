@@ -12,10 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ============================================================================
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
+# Lint as: python3
 # Dependency imports
 
 from lifetime_value import metrics
@@ -49,18 +46,18 @@ class MetricsTest(unittest.TestCase):
     self.assertEqual(gini.loc['perfect_model', 'normalized'], 1.)
     self.assertAlmostEqual(gini.loc['random_model', 'normalized'], 0., places=1)
 
-  def test_bucket_stats(self):
-    bucket_stats_perfect = metrics.bucket_stats(self.y_true,
+  def test_decile_stats(self):
+    decile_stats_perfect = metrics.decile_stats(self.y_true,
                                                 self.y_pred_perfect)
-    bucket_stats_random = metrics.bucket_stats(self.y_true,
+    decile_stats_random = metrics.decile_stats(self.y_true,
                                                self.y_pred_random)
-    self.assertTrue(np.all(bucket_stats_perfect['normalized_rmse'] == 0))
-    self.assertTrue(np.all(bucket_stats_perfect['normalized_mae'] == 0))
-    self.assertTrue(np.all(bucket_stats_perfect['bucket_mape'] == 0))
+    self.assertTrue(np.all(decile_stats_perfect['normalized_rmse'] == 0))
+    self.assertTrue(np.all(decile_stats_perfect['normalized_mae'] == 0))
+    self.assertTrue(np.all(decile_stats_perfect['decile_mape'] == 0))
     self.assertTrue(
         np.allclose(
-            bucket_stats_random['label_mean'],
-            np.random.permutation(bucket_stats_random['label_mean']),
+            decile_stats_random['label_mean'],
+            np.random.permutation(decile_stats_random['label_mean']),
             rtol=1e-2,
             atol=1000))
 
