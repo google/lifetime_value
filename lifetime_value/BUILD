@@ -14,7 +14,18 @@
 # ============================================================================
 licenses(["notice"])
 
-exports_files(["LICENSE"])
+exports_files([
+    "LICENSE",
+])
+
+pytype_library(
+    name = "lifetime_value",
+    srcs = ["__init__.py"],
+    deps = [
+        ":metrics",
+        ":zero_inflated_lognormal",
+    ],
+)
 
 pytype_library(
     name = "metrics",
