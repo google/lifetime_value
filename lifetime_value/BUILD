@@ -21,6 +21,7 @@ exports_files([
 pytype_library(
     name = "lifetime_value",
     srcs = ["__init__.py"],
+    srcs_version = "PY2AND3",
     deps = [
         ":metrics",
         ":zero_inflated_lognormal",
