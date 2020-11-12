@@ -21,7 +21,7 @@ exports_files([
 pytype_library(
     name = "lifetime_value",
     srcs = ["__init__.py"],
-    srcs_version = "PY2AND3",
+    srcs_version = "PY3",
     deps = [
         ":metrics",
         ":zero_inflated_lognormal",
@@ -78,7 +78,6 @@ py_test(
     python_version = "PY3",
     deps = [
         ":zero_inflated_lognormal",
-        "//learning/brain/public:disable_tf2",  # build_cleaner: keep; go/disable_tf2
         # numpy dep,
         # scipy dep,
         # tensorflow dep,
